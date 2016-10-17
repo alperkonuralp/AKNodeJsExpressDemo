@@ -4,16 +4,16 @@ html
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    meta(name="description", content="")
+    meta(name="description", content="Alper Konuralp NodeJs &amp; Express Js Demo")
     meta(name="author", content="Alper Konuralp")
-    title= title
-    script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js")
-    script(src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js")
-    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+    title= title + " - Express Demo"
     link(rel="stylesheet", href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;subset=latin,latin-ext")
+    link(rel="stylesheet", href="/stylesheets/style.css")
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
     script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
     script(src="/javascripts/script.js")
-    link(rel="stylesheet", href="/stylesheets/style.css")
+    block header-extensions
   body
     nav(class="navbar navbar-inverse", role="navigation")
       div(class="container")
@@ -26,11 +26,13 @@ html
           a(class="navbar-brand", href="/") Express Demo
         div(id="navbar", class="collapse navbar-collapse")
           ul(class="nav navbar-nav")
-            li(class="active")
+            li(class= activePage == "home" ? "active": "")
               a(href="/") Home
-            li
+
+            li(class= activePage == "about" ? "active": "")
               a(href="/about") About us
-            li
+
+            li(class= activePage == "contact" ? "active": "")
               a(href="/contact") Contact us
 
     div(id="body-content", class="container")
